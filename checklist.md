@@ -13,7 +13,7 @@
 - [x] Crear carpeta scripts
 - [x] Crear fichero pacake.json
 - [x] Crear fichero .gitignore
-- [] He realizado conexión con GitHub de este proyecto
+- [x] He realizado conexión con GitHub de este proyecto
 
 
 ## Scripts de validación 

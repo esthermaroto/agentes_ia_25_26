@@ -1,0 +1,26 @@
+{
+  "authors": [
+    { "id": 1, "name": "Robert C. Martin", "country": "USA" },
+    { "id": 2, "name": "Erich Gamma", "country": "Switzerland" },
+    { "id": 3, "name": "Andrew Hunt", "country": "USA" },
+    { "id": 4, "name": "Kyle Simpson", "country": "USA" },
+    { "id": 5, "name": "Brian Goetz", "country": "USA" },
+    { "id": 6, "name": "Eric Matthes", "country": "USA" },
+    { "id": 7, "name": "Martin Fowler", "country": "UK" },
+    { "id": 8, "name": "Douglas Crockford", "country": "USA" },
+    { "id": 9, "name": "Bjarne Stroustrup", "country": "Denmark" },
+    { "id": 10, "name": "Grady Booch", "country": "USA" }
+  ],
+  "books": [
+    { "id": 1, "title": "Clean Code", "year": 2008, "price": 35.99, "authorId": 1 },
+    { "id": 2, "title": "Design Patterns", "year": 1994, "price": 42.50, "authorId": 2 },
+    { "id": 3, "title": "The Pragmatic Programmer", "year": 1999, "price": 38.00, "authorId": 3 },
+    { "id": 4, "title": "You Don’t Know JS Yet", "year": 2020, "price": 27.99, "authorId": 4 },
+    { "id": 5, "title": "Java Concurrency in Practice", "year": 2006, "price": 45.00, "authorId": 5 },
+    { "id": 6, "title": "Python Crash Course", "year": 2019, "price": 30.00, "authorId": 6 },
+    { "id": 7, "title": "Refactoring", "year": 1999, "price": 39.99, "authorId": 7 },
+    { "id": 8, "title": "JavaScript: The Good Parts", "year": 2008, "price": 29.99, "authorId": 8 },
+    { "id": 9, "title": "The C++ Programming Language", "year": 2013, "price": 55.00, "authorId": 9 },
+    { "id": 10, "title": "Object-Oriented Analysis and Design", "year": 2007, "price": 41.50, "authorId": 10 }
+  ]
+}

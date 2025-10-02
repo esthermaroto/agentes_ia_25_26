@@ -4,9 +4,16 @@
   "description": "Implementarás un sistema completo de gestión de estudiantes mediante peticiones HTTP, utilizando una API local con json-server. Documentarás todas las operaciones CRUD (Create, Read, Update, Delete) usando tres herramientas diferentes: cURL (línea de comandos), Thunder Client (interfaz gráfica) y REST Client (archivos .http).",
   "license": "ISC",
   "author": "Esther MT - Ruth FM",
-  "type": "commonjs",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server:up": "json-server --watch db.json --port 4000",
+    "crud:curl":"bash ./src/crud-curl.js",
+    "validate": "bash ./scripts/validate.sh"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "json-server": "^1.0.0-beta.3"
   }
 }

@@ -55,7 +55,7 @@
   - [x] READ todos
   - [x] READ por ID
   - [x] READ estudiantes activos
-  - [ ] READ por nivel
+  - [X] READ por nivel
   - [ ] UPDATE completo (PUT)
   - [ ] PATCH campo específico
   - [ ] DELETE estudiante

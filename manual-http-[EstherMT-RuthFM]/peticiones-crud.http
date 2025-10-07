@@ -25,6 +25,9 @@ GET {{apiUrl}}?id=1
 ### Obtener estudiantes activos
 GET {{apiUrl}}?active=true
 
+### Obtener estudiantes por nivel
+GET {{apiUrl}}?level=intermediate
+
 
 
 

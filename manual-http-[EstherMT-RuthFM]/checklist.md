@@ -52,8 +52,8 @@
 - [x] Definir variables (@baseUrl, @port, @apiUrl)
 - [ ] Implementar operaciones CRUD:
   - [x] CREATE estudiante
-  - [ ] READ todos
-  - [ ] READ por ID
+  - [x] READ todos
+  - [x] READ por ID
   - [ ] READ estudiantes activos
   - [ ] READ por nivel
   - [ ] UPDATE completo (PUT)

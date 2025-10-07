@@ -19,4 +19,14 @@ Content-Type: application/json
 GET {{apiUrl}}
 
 
+### Obtener estudiante por ID
+GET {{apiUrl}}?id=1
+
+
+
+
+
+
+
+
   

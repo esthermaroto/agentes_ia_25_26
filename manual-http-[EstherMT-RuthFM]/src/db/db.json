@@ -55,14 +55,6 @@
       "enrollmentDate": "2024-09-05",
       "active": false,
       "level": "intermediate"
-    },
-    {
-      "id": "59cb",
-      "name": "Esther Maroto",
-      "email": "esther.maroto@email.com",
-      "enrollmentDate": "2025-10-07",
-      "active": true,
-      "level": "intermediate"
     }
   ],
   "courses": [

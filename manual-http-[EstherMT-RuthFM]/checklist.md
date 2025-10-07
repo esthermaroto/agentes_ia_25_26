@@ -48,10 +48,10 @@
 - [ ] Documentar uso de Thunder Client en README con capturas
 
 ## 📝 Parte 5: REST Client
-- [ ] Crear archivo `peticiones-crud.http`                                                              (esther)
-- [ ] Definir variables (@baseUrl, @port, @apiUrl)
+- [x] Crear archivo `peticiones-crud.http`                                                              (esther)
+- [x] Definir variables (@baseUrl, @port, @apiUrl)
 - [ ] Implementar operaciones CRUD:
-  - [ ] CREATE estudiante
+  - [x] CREATE estudiante
   - [ ] READ todos
   - [ ] READ por ID
   - [ ] READ estudiantes activos
@@ -68,19 +68,3 @@
 - [ ] Validar existencia de capturas en `images/`
 - [ ] Mostrar mensaje final de validación
 - [ ] Dar permisos de ejecución y probar en terminal
-
-## 📋 Parte 7: Checklist de progreso
-- [x] Crear archivo `checklist.md` (este documento)                                                      (esther)
-
-## 🌿 Parte 8: Git y GitHub
-- [x] Crear repositorio en GitHub                                                                        (esther)
-- [x] Añadir al profesor como colaborador
-- [x] Inicializar Git en proyecto local
-- [x] Conectar con remoto y crear rama `main`
-- [x] Subir código inicial
-- [x] Crear rama `m1/http-request-response`
-- [ ] Hacer commits incrementales por fase
-- [ ] Subir rama y crear Pull Request hacia `main`
-- [ ] Asignar profesor como reviewer
-- [ ] Tras aprobación, actualizar `main` local
-- [ ] Crear tag `M1/http-request-response` y subirlo

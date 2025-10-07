@@ -1,0 +1,22 @@
+@baseUrl = http://localhost
+@port = 4000
+@apiUrl = {{baseUrl}}:{{port}}/students
+
+### Crear nuevo estudiante
+POST {{apiUrl}}
+Content-Type: application/json
+
+{
+  "name": "Esther Maroto",
+  "email": "esther.maroto@email.com",
+  "enrollmentDate": "2025-10-07",
+  "active": true,
+  "level": "intermediate"
+
+}
+
+###Obtener todos los estudiantes
+GET {{apiUrl}}
+
+
+  

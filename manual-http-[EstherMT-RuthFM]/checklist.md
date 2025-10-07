@@ -26,7 +26,7 @@
   - [ ] `updateStudent(id, studentData)`
   - [ ] `patchStudent(id, partialData)`
   - [ ] `deleteStudent(id)`
-- [ ] Ejecutar todas las funciones en orden y mostrar mensajes claros                                  (esther)
+- [ ] Ejecutar todas las funciones en orden y mostrar mensajes claros                                  (ruth)
 
 ## 📚 Parte 3: Documentación CRUD con cURL
 - [ ] Documentar cada operación (CREATE, READ ALL, READ BY ID, UPDATE, PATCH, DELETE) en README        (esther)
@@ -50,7 +50,7 @@
 ## 📝 Parte 5: REST Client
 - [x] Crear archivo `peticiones-crud.http`                                                              (esther)
 - [x] Definir variables (@baseUrl, @port, @apiUrl)
-- [ ] Implementar operaciones CRUD:
+- [x] Implementar operaciones CRUD:
   - [x] CREATE estudiante
   - [x] READ todos
   - [x] READ por ID
@@ -59,7 +59,7 @@
   - [ ] UPDATE completo (PUT)
   - [ ] PATCH campo específico
   - [ ] DELETE estudiante
-- [ ] Probar todas las peticiones en VS Code
+- [x] Probar todas las peticiones en VS Code
 
 ## ✅ Parte 6: Script de validación
 - [ ] Crear `scripts/validate.sh`                                                                        (ruth)

@@ -54,7 +54,7 @@
   - [x] CREATE estudiante
   - [x] READ todos
   - [x] READ por ID
-  - [ ] READ estudiantes activos
+  - [x] READ estudiantes activos
   - [ ] READ por nivel
   - [ ] UPDATE completo (PUT)
   - [ ] PATCH campo específico

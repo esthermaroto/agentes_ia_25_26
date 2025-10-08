@@ -134,7 +134,7 @@ updateStudent(7, {
     email: "maaa@gmail.com",
     enrollmentDate: "2023-10-01",
     active: false,
-    level: "intermediate",
+    level: "intermediate", 
 });
 console.log("\n");
 

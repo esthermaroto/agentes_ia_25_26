@@ -20,7 +20,7 @@ function createStudent(studentData) {
     // Convertir los datos del estudiante a JSON
     const data = JSON.stringify(studentData);
     // Construir el comando CURL
-    const curlCommand = `curl -X POST ${BASE_URL} -H "Content-Type: application/json" -d '${data}'`;
+    const curlCommand = `curl -i -X POST ${BASE_URL} -H "Content-Type: application/json" -d '${data}'`;
     // Mostrar el comando CURL en la consola
     console.log("Comando Crear CURL de estudiante:");
     console.log(curlCommand);
@@ -33,7 +33,7 @@ function createStudent(studentData) {
  */
 function readAllStudents() {
     // Construir el comando CURL
-    const curlCommand = `curl -X GET ${BASE_URL}`;
+    const curlCommand = `curl -i -X GET ${BASE_URL}`;
     // Mostrar el comando CURL en la consola
     console.log("Comando Leer Todos los Estudiantes:");
     console.log(curlCommand);
@@ -47,7 +47,7 @@ function readStudentById(id) {
     // Construir la URL para leer un estudiante por ID
     const url = `${BASE_URL}/${id}`;
     // Construir el comando CURL
-    const curlCommand = `curl -X GET ${url}`;
+    const curlCommand = `curl -i -X GET ${url}`;
     // Mostrar el comando CURL en la consola
     console.log("Comando Leer Estudiante por ID:");
     console.log(curlCommand);
@@ -64,7 +64,7 @@ function updateStudent(id, studentData) {
     // Construir la URL para actualizar un estudiante por ID
     const url = `${BASE_URL}/${id}`;
     // Construir el comando CURL
-    const curlCommand = `curl -X PUT ${url} -H "Content-Type: application/json" -d '${data}'`;
+    const curlCommand = `curl -i -X PUT ${url} -H "Content-Type: application/json" -d '${data}'`;
     // Mostrar el comando CURL en la consola
     console.log("Comando Actualizar Estudiante:");
     console.log(curlCommand);
@@ -81,7 +81,7 @@ function patchStudent(id, partialData) {
     // Construir la URL para actualizar parcialmente un estudiante por ID
     const url = `${BASE_URL}/${id}`;
     // Construir el comando CURL
-    const curlCommand = `curl -X PATCH ${url} -H "Content-Type: application/json" -d '${data}'`;
+    const curlCommand = `curl -i -X PATCH ${url} -H "Content-Type: application/json" -d '${data}'`;
     // Mostrar el comando CURL en la consola
     console.log("Comando Actualizar Parcialmente Estudiante:");
     console.log(curlCommand);

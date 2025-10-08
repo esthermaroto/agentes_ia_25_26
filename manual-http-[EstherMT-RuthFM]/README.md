@@ -199,6 +199,145 @@ curl -i -X DELETE http://localhost:4000/students/7
 
 ## Parte 4: Thunder Client
 
+### ⚙️ Configuración de Thunder Client
+
+En esta parte se pedía configurar **una colección (Collection)** y **un entorno (Environment)**
+en Thunder Client para organizar las peticiones CRUD y definir variables reutilizables
+como `{{baseUrl}}`, `{{port}}` y `{{fullUrl}}`.
+
+⚠️ **Nota importante:**  
+La **versión gratuita de Thunder Client** no permite crear **Collections** ni **Environments**, 
+por lo que no es posible agrupar las peticiones ni definir variables dentro de la herramienta.
+
+Para poder realizar el ejercicio igualmente, se optó por:
+
+- Crear las peticiones **de forma individual**, usando **“New Request”**.  
+- Utilizar directamente las **URLs completas** en lugar de variables.
+
+Ejemplo de URLs usadas:
+
+
+>GET http://localhost:4000/students
+
+>GET http://localhost:4000/students/1
+
+>POST http://localhost:4000/students
+
+>PUT http://localhost:4000/students/1
+
+>PATCH http://localhost:4000/students/1
+
+>DELETE http://localhost:4000/students/1
+
+
+En la versión completa de Thunder Client, la configuración del entorno y la colección sería la siguiente:
+
+| Variable | Valor | Descripción |
+|-----------|--------|-------------|
+| baseUrl | http://localhost | Dirección base del servidor |
+| port | 4000 | Puerto donde corre json-server |
+| fullUrl | {{baseUrl}}:{{port}}/students | Endpoint completo de la API |
+
+Esto permitiría crear una **Collection llamada “CRUD Students API”** y dentro de ella
+6 peticiones (POST, GET, GET by ID, PUT, PATCH, DELETE), usando la variable `{{fullUrl}}`
+para simplificar las pruebas.
+
+En esta versión gratuita, dichas peticiones se han realizado igualmente y se documentan acontinuación con sus capturas de pantalla.
+
+### 📄 Documentación de uso de Thunder Client
+
+Para probar la API de **Students** se utilizó **Thunder Client**, una extensión de VS Code que permite realizar peticiones HTTP de forma sencilla.
+
+#### Cómo usar Thunder Client
+
+1. Abrir **Thunder Client** desde la barra lateral de VS Code.
+2. Crear una nueva petición (`New Request`) o usar una existente.
+3. Seleccionar el método HTTP adecuado según la operación:
+
+| Operación | Método | URL ejemplo |
+|-----------|--------|------------|
+| Crear estudiante | POST | `http://localhost:4000/students` |
+| Obtener todos los estudiantes | GET | `http://localhost:4000/students` |
+| Obtener estudiante por ID | GET | `http://localhost:4000/students/1` |
+| Actualizar estudiante | PUT | `http://localhost:4000/students/1` |
+| Modificar estudiante | PATCH | `http://localhost:4000/students/1` |
+| Eliminar estudiante | DELETE | `http://localhost:4000/students/1` |
+
+4. Para **GET**, no es necesario añadir `Body` ni `Headers`.  
+   Para **POST, PUT y PATCH**, se debe enviar un JSON en el `Body` con los datos del estudiante, por ejemplo:
+
+```json
+{
+  "name": "Juan Pérez",
+  "email": "juan.perez@email.com",
+  "enrollmentDate": "2024-10-08",
+  "active": true,
+  "level": "beginner"
+}
+```
+5. Hacer clic en **Send** y verificar la respuesta en el panel de la derecha:
+
+- **Status** indica si la operación fue exitosa (200, 201, 204, etc.)
+- **Body** muestra los datos devueltos por la API.
+- **Headers** y **Size** proporcionan información adicional de la petición y respuesta.
+
+#### Capturas de pantalla
+
+A continuación se muestran las capturas de cada petición realizada, con la información de **Request** y **Response** visible.  
+
+---
+
+### CREATE Student
+Crea un nuevo estudiante enviando los datos en formato JSON.  
+
+![Request CREATE Student](imagenes/thunder_client/thunder-create-student.png)  
+![Response CREATE Student](imagenes/thunder_client/thunder-create-student_1.png)  
+
+---
+
+### GET All Students
+Solicita todos los estudiantes y devuelve un array con la información de cada uno.  
+
+![Request GET All Students](imagenes/thunder_client/thunder-get-all-students.png)  
+![Response GET All Students](imagenes/thunder_client/thunder-get-all-students_1.png)  
+
+---
+
+### GET Student by ID
+Recupera un estudiante específico usando su ID.  
+
+![Request GET Student by ID](imagenes/thunder_client/thunder-get-student-by-id.png)  
+![Response GET Student by ID](imagenes/thunder_client/thunder-get-student-by-id_1.png)  
+
+---
+
+### UPDATE Student (PUT)
+Sustituye completamente los datos de un estudiante existente.  
+
+![Request UPDATE Student](imagenes/thunder_client/thunder-update-student-put.png)  
+![Response UPDATE Student](imagenes/thunder_client/thunder-update-student-put_1.png)  
+
+---
+
+### PATCH Student
+Modifica parcialmente los datos de un estudiante existente.  
+
+![Request PATCH Student](imagenes/thunder_client/thunder-patch-student.png)  
+![Response PATCH Student](imagenes/thunder_client/thunder-patch-student_1.png)  
+
+---
+
+### DELETE Student
+Elimina un estudiante de la base de datos según su ID.  
+
+![Request DELETE Student](imagenes/thunder_client/thunder-delete-student.png)  
+![Response DELETE Student](imagenes/thunder_client/thunder-delete-student_1.png)  
+
+
+## Parte 5: REST Client
+REST Client es una extensión de Visual Studio Code que permite enviar peticiones HTTP directamente desde archivos `.http`. 
+En este proyecto se ha creado el archivo `peticiones-crud.http` en la raíz del proyecto para documentar y probar todas las operaciones CRUD sobre la colección `students`.
+
 ---
 
 ## Parte 5: REST Client

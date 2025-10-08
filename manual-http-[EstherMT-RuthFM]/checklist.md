@@ -29,10 +29,10 @@
 - [x] Ejecutar todas las funciones en orden y mostrar mensajes claros                                  (ruth)
 
 ## 📚 Parte 3: Documentación CRUD con cURL
-- [ ] Documentar cada operación (CREATE, READ ALL, READ BY ID, UPDATE, PATCH, DELETE) en README        (esther)
-- [ ] Explicar flags y métodos HTTP                                                                    (esther)
-- [ ] Incluir respuestas HTTP reales (headers + body)                                                  (esther) 
-- [ ] Capturar y documentar resultados en el README                                                    (ruth)
+- [x] Documentar cada operación (CREATE, READ ALL, READ BY ID, UPDATE, PATCH, DELETE) en README        (esther)
+- [x] Explicar flags y métodos HTTP                                                                    (esther)
+- [x] Incluir respuestas HTTP reales (headers + body)                                                  (esther) 
+- [x] Capturar y documentar resultados en el README                                                    (ruth)
 
 ## ⚡ Parte 4: Thunder Client                                                                                                                                              
 - [ ] Crear colección `CRUD Students API`                                                              (ruth)

@@ -47,6 +47,14 @@
       "enrollmentDate": "2024-09-05",
       "active": false,
       "level": "intermediate"
+    },
+    {
+      "id": "ea94",
+      "name": "Juan Perez",
+      "email": "juan@hmail.com",
+      "enrollmentDate": "2023-10-01",
+      "active": true,
+      "level": "beginner"
     }
   ],
   "courses": [

@@ -35,17 +35,17 @@
 - [x] Capturar y documentar resultados en el README                                                    (ruth)
 
 ## ⚡ Parte 4: Thunder Client                                                                                                                                              
-- [ ] Crear colección `CRUD Students API`                                                              (ruth)
-- [ ] Configurar entorno de variables (`baseUrl`, `port`, `fullUrl`)                                      
-- [ ] Crear peticiones:                                                                                           
-  - [ ] CREATE Student (POST)                                                                          
-  - [ ] GET All Students (GET)                                                                                                 
-  - [ ] GET Student by ID (GET)                                                                        
-  - [ ] UPDATE Student (PUT)
-  - [ ] PATCH Student (PATCH)
-  - [ ] DELETE Student (DELETE)
-- [ ] Guardar al menos 6 capturas en `images/`
-- [ ] Documentar uso de Thunder Client en README con capturas
+- [x] Crear colección `CRUD Students API`                                                              (ruth)
+- [x] Configurar entorno de variables (`baseUrl`, `port`, `fullUrl`)                                      
+- [x] Crear peticiones:                                                                                           
+  - [x] CREATE Student (POST)                                                                          
+  - [x] GET All Students (GET)                                                                                                 
+  - [x] GET Student by ID (GET)                                                                        
+  - [x] UPDATE Student (PUT)
+  - [x] PATCH Student (PATCH)
+  - [x] DELETE Student (DELETE)
+- [x] Guardar al menos 6 capturas en `imagenes/`
+- [x] Documentar uso de Thunder Client en README con capturas
 
 ## 📝 Parte 5: REST Client
 - [x] Crear archivo `peticiones-crud.http`                                                              (esther)

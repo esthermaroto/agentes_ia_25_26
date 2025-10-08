@@ -19,7 +19,7 @@ GET {{apiUrl}}
 
 
 ### Obtener estudiante por ID
-GET {{apiUrl}}/1
+GET {{apiUrl}}
 
 ### Obtener estudiantes activos
 GET {{apiUrl}}?active=true

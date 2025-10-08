@@ -12,23 +12,12 @@
   - [x] `validate`
 - [x] Crear estructura de carpetas (`src/`, `scripts/`, `images/`)                                     (esther)    
 - [x] Crear archivo `.env` con `PORT=4000`, `API_BASE_URL=http://localhost`, `NODE_ENV=development`    (ruth)
-- [x] Crear `.env.example`                                                                            (ruth)       
+- [x] Crear `.env.example`                                                                             (ruth)       
 - [x] Crear `.gitignore`                                                                               (ruth)
 - [x] Crear archivo `README.md`                                                                        (esther)
 - [x] Crear `src/db/db.json` con estudiantes, cursos y matrículas                                      (ruth)
 
 ## 💻 Parte 2: Script CRUD con funciones JavaScript
-<<<<<<< HEAD
-- [ ] Importar y configurar dotenv en `crud-curl.js`                                                   (ruth)
-- [ ] Implementar funciones:                                                                           (ruth)    
-  - [ ] `createStudent(studentData)`
-  - [ ] `readAllStudents()`
-  - [ ] `readStudentById(id)`
-  - [ ] `updateStudent(id, studentData)`
-  - [ ] `patchStudent(id, partialData)`
-  - [ ] `deleteStudent(id)`
-- [ ] Ejecutar todas las funciones en orden y mostrar mensajes claros                                  (ruth)
-=======
 - [x] Importar y configurar dotenv en `crud-curl.js`                                                   (ruth)
 - [x] Implementar funciones:                                                                           (ruth)    
   - [x] `createStudent(studentData)`
@@ -38,7 +27,6 @@
   - [x] `patchStudent(id, partialData)`
   - [x] `deleteStudent(id)`
 - [x] Ejecutar todas las funciones en orden y mostrar mensajes claros                                  (ruth)
->>>>>>> c35d5fc8976220501ca81e670cc827e073178afb
 
 ## 📚 Parte 3: Documentación CRUD con cURL
 - [ ] Documentar cada operación (CREATE, READ ALL, READ BY ID, UPDATE, PATCH, DELETE) en README        (esther)
@@ -68,9 +56,9 @@
   - [x] READ por ID
   - [x] READ estudiantes activos
   - [X] READ por nivel
-  - [ ] UPDATE completo (PUT)
-  - [ ] PATCH campo específico
-  - [ ] DELETE estudiante
+  - [x] UPDATE completo (PUT)
+  - [x] PATCH campo específico
+  - [x] DELETE estudiante
 - [x] Probar todas las peticiones en VS Code
 
 ## ✅ Parte 6: Script de validación

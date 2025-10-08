@@ -24,11 +24,19 @@ npm run server:up
 ```
 >El servidor se levanta en http://localhost:4000
 
+---
+
 ## Parte 2: Script CRUD con funciones JavaScript
+
+---
 
 ## Parte 3: Documentación CRUD con cURL
 
+---
+
 ## Parte 4: Thunder Client
+
+---
 
 ## Parte 5: REST Client
 REST Client es una extensión de Visual Studio Code que permite enviar peticiones HTTP directamente desde archivos `.http`. 

@@ -124,14 +124,14 @@ console.log("\n");
 
 // 3️⃣ Leer un estudiante por ID
 console.log("=== LEER ESTUDIANTE POR ID ===");
-readStudentById(8);
+readStudentById(7);
 console.log("\n");
 
 // 4️⃣ Actualizar un estudiante por ID
 console.log("=== ACTUALIZAR ESTUDIANTE COMPLETO ===");
-updateStudent(8, {
-    name: "Juan Perez Actualizado",
-    email: "juu@gmail.com",
+updateStudent(7, {
+    name: "Maria Perez Actualizado",
+    email: "maaa@gmail.com",
     enrollmentDate: "2023-10-01",
     active: false,
     level: "intermediate",
@@ -140,7 +140,7 @@ console.log("\n");
 
 // 5️⃣ Actualizar parcialmente un estudiante por ID (PATCH)
 console.log("=== PATCH ESTUDIANTE ===");
-patchStudent(8, {
+patchStudent(7, {
     level: "advanced",
     active: true,
 });
@@ -148,7 +148,7 @@ console.log("\n");
 
 // 6️⃣ Eliminar un estudiante por ID
 console.log("=== ELIMINAR ESTUDIANTE ===");
-deleteStudent(8);
+deleteStudent(7);
 console.log("\n");
 
 console.log("=== FIN DE EJECUCIÓN DEL SCRIPT CRUD ====");

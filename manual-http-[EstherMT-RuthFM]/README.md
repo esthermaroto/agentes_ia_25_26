@@ -197,7 +197,7 @@ curl -i -X DELETE http://localhost:4000/students/7
 
 ---
 
-## Parte 3: Thunder Client
+## Parte 4: Thunder Client
 
 ### ⚙️ Configuración de Thunder Client
 
@@ -335,7 +335,7 @@ Elimina un estudiante de la base de datos según su ID.
 
 ---
 
-## Parte 4: REST Client
+## Parte 5: REST Client
 REST Client es una extensión de Visual Studio Code que permite enviar peticiones HTTP directamente desde archivos `.http`. 
 En este proyecto se ha creado el archivo `peticiones-crud.http` en la raíz del proyecto para documentar y probar todas las operaciones CRUD sobre la colección `students`.
 

@@ -62,9 +62,9 @@
 - [x] Probar todas las peticiones en VS Code
 
 ## ✅ Parte 6: Script de validación
-- [ ] Crear `scripts/validate.sh`                                                                        (ruth)
-- [ ] Verificar existencia de archivos y carpetas requeridas
-- [ ] Comprobar dependencias en `package.json`
-- [ ] Validar existencia de capturas en `images/`
-- [ ] Mostrar mensaje final de validación
-- [ ] Dar permisos de ejecución y probar en terminal
+- [x] Crear `scripts/validate.sh`                                                                        (ruth)
+- [x] Verificar existencia de archivos y carpetas requeridas
+- [x] Comprobar dependencias en `package.json`
+- [x] Validar existencia de capturas en `images/`
+- [x] Mostrar mensaje final de validación
+- [x] Dar permisos de ejecución y probar en terminal

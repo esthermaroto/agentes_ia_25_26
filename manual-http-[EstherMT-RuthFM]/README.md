@@ -25,7 +25,7 @@ npm run server:up
 >El servidor se levanta en http://localhost:4000
 
 
-## Parte 3: Documentación CRUD con cURL
+## Parte 2: Funciones CRUD con cURL
 
 ### CREATE - Crear estudiante
 
@@ -197,7 +197,7 @@ curl -i -X DELETE http://localhost:4000/students/7
 
 ---
 
-## Parte 4: Thunder Client
+## Parte 3: Thunder Client
 
 ### ⚙️ Configuración de Thunder Client
 
@@ -333,14 +333,9 @@ Elimina un estudiante de la base de datos según su ID.
 ![Request DELETE Student](imagenes/thunder_client/thunder-delete-student.png)  
 ![Response DELETE Student](imagenes/thunder_client/thunder-delete-student_1.png)  
 
-
-## Parte 5: REST Client
-REST Client es una extensión de Visual Studio Code que permite enviar peticiones HTTP directamente desde archivos `.http`. 
-En este proyecto se ha creado el archivo `peticiones-crud.http` en la raíz del proyecto para documentar y probar todas las operaciones CRUD sobre la colección `students`.
-
 ---
 
-## Parte 5: REST Client
+## Parte 4: REST Client
 REST Client es una extensión de Visual Studio Code que permite enviar peticiones HTTP directamente desde archivos `.http`. 
 En este proyecto se ha creado el archivo `peticiones-crud.http` en la raíz del proyecto para documentar y probar todas las operaciones CRUD sobre la colección `students`.
 
@@ -451,7 +446,6 @@ DELETE {{apiUrl}}/1
 
 ![Eliminar estudiante](imagenes/REST_client/eliminar_estudiante.png)
 
-## Parte 6: Script de validación
 
 
   

@@ -95,7 +95,7 @@ function deleteStudent(id) {
     // Construir la URL para eliminar un estudiante por ID
     const url = `${BASE_URL}/${id}`;
     // Construir el comando CURL
-    const curlCommand = `curl -X DELETE ${url}`;
+    const curlCommand = `curl -i -X DELETE ${url}`;
     // Mostrar el comando CURL en la consola
     console.log("Comando Eliminar Estudiante:");
     console.log(curlCommand);

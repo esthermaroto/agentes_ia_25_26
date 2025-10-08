@@ -129,7 +129,7 @@ console.log("\n");
 
 // 4️⃣ Actualizar un estudiante por ID
 console.log("=== ACTUALIZAR ESTUDIANTE COMPLETO ===");
-updateStudent(7, {
+updateStudent(6, {
     name: "Maria Perez Actualizado",
     email: "maaa@gmail.com",
     enrollmentDate: "2023-10-01",
@@ -140,7 +140,7 @@ console.log("\n");
 
 // 5️⃣ Actualizar parcialmente un estudiante por ID (PATCH)
 console.log("=== PATCH ESTUDIANTE ===");
-patchStudent(7, {
+patchStudent(6, {
     level: "advanced",
     active: true,
 });

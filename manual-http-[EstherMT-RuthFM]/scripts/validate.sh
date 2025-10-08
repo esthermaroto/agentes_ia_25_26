@@ -81,7 +81,7 @@ echo "🖼 Verificando capturas de Thunder Client..."
 
 count=$(ls imagenes/thunder_client/*.png 2>/dev/null | wc -l)
 if [ "$count" -ge 6 ]; then
-  echo "✅ Se encontraron $count capturas en /images"
+  echo "✅ Se encontraron $count capturas en /imagenes/thunder_client"
 else
   echo "❌ Se encontraron solo $count capturas (mínimo 6 requeridas)"
   errors=true

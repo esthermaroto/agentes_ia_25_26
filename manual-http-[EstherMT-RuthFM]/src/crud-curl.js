@@ -1,203 +1,140 @@
 // src/crud-curl.js
 import dotenv from "dotenv";
-import { exec } from "child_process";
+import { exec as execCallback } from "child_process";
+import { promisify } from "util";
 
-// Cargar variables de entorno desde el archivo .env
+// Cargar variables de entorno
 dotenv.config();
 
-// Extraer variables de entorno
+// Promisify de exec
+const exec = promisify(execCallback);
+
+// URL base
 const PORT = process.env.PORT;
 const API_BASE_URL = process.env.API_BASE_URL;
-
-// Construir la URL base para las peticiones
 const BASE_URL = `${API_BASE_URL}:${PORT}/students`;
 
 /**
- * CREATE Student
- * Crear un comando CURL para crear un nuevo estudiante
- * @param {Object} studentData - Datos del estudiante a crear
+ * Ejecuta un comando curl en la terminal
+ * @param {string} curlCommand - Comando curl a ejecutar
  */
-function createStudent(studentData) {
-    // Convertir los datos del estudiante a JSON
-    const data = JSON.stringify(studentData);
-    // Construir el comando CURL
-    const curlCommand = `curl -i -X POST ${BASE_URL} -H "Content-Type: application/json" -d '${data}'`;
-    //Ejecutar el comando CURL en la terminal
-    exec(curlCommand, (error, stdout, stderr) => {
-        if (error) {
-            console.error(`Error al ejecutar el comando: ${error.message}`);
-            return;
-        }
-        if (stderr) {
-            console.error(`Error en la salida: ${stderr}`);
-            return;
-        }   
-});
+async function runCurl(curlCommand) {
+    try {
+        const { stdout, stderr } = await exec(curlCommand);
+        if (stderr && stderr.trim() !== "") console.warn(`⚠️ ${stderr}`);
+        console.log(stdout);
+    } catch (error) {
+        console.error(`Error al ejecutar el comando: ${error.message}`);
+    }
 }
 
 /**
- * READ ALL Students
- * Crear un comando CURL para leer todos los estudiantes
- * No requiere parámetros
+ * Crear un nuevo estudiante
+ * @param {Object} studentData - Datos del estudiante a crear
  */
-function readAllStudents() {
-    // Construir el comando CURL
-    const curlCommand = `curl -i -X GET ${BASE_URL}`;
-    //Ejecutar el comando CURL en la terminal
-    exec(curlCommand, (error, stdout, stderr) => {
-        if (error) {
-            console.error(`Error al ejecutar el comando: ${error.message}`);
-            return;
-        }
-        if (stderr) {
-            console.error(`Error en la salida: ${stderr}`);
-            return;
-        }   
-});
+async function createStudent(studentData) {
+    const data = JSON.stringify(studentData).replace(/"/g, '\\"');
+    const curlCommand = `curl -s -i -X POST ${BASE_URL} -H "Content-Type: application/json" -d "${data}"`;
+    await runCurl(curlCommand);
 }
 
-/** READ Student by ID
- * Crear un comando CURL para leer un estudiante por ID
- * @param {number} id - ID del estudiante a leer
+/**
+ * Leer todos los estudiantes
  */
-function readStudentById(id) {
-    // Construir la URL para leer un estudiante por ID
-    const url = `${BASE_URL}/${id}`;
-    // Construir el comando CURL
-    const curlCommand = `curl -i -X GET ${url}`;
-    //Ejecutar el comando CURL en la terminal
-    exec(curlCommand, (error, stdout, stderr) => {
-        if (error) {
-            console.error(`Error al ejecutar el comando: ${error.message}`);
-            return;
-        }
-        if (stderr) {
-            console.error(`Error en la salida: ${stderr}`);
-            return;
-        }   
-});
+async function readAllStudents() {
+    const curlCommand = `curl -s -i -X GET ${BASE_URL}`;
+    await runCurl(curlCommand);
 }
 
-/** UPDATE Student
- * Crear un comando CURL para actualizar un estudiante por ID
- * @param {number} id - ID del estudiante a actualizar
- * @param {Object} studentData - Datos del estudiante a actualizar
+/**
+ * Leer un estudiante por ID
+ * @param {string} studentId - ID del estudiante a leer
  */
-function updateStudent(id, studentData) {
-    // Convertir los datos del estudiante a JSON
-    const data = JSON.stringify(studentData);
-    // Construir la URL para actualizar un estudiante por ID
-    const url = `${BASE_URL}/${id}`;
-    // Construir el comando CURL
-    const curlCommand = `curl -i -X PUT ${url} -H "Content-Type: application/json" -d '${data}'`;
-    //Ejecutar el comando CURL en la terminal
-    exec(curlCommand, (error, stdout, stderr) => {
-        if (error) {
-            console.error(`Error al ejecutar el comando: ${error.message}`);
-            return;
-        }
-        if (stderr) {
-            console.error(`Error en la salida: ${stderr}`);
-            return;
-        }   
-});
+async function readStudentById(studentId) {
+    const curlCommand = `curl -s -i -X GET ${BASE_URL}/${studentId}`;
+    await runCurl(curlCommand);
 }
 
-/** PATCH Student
- * Crear un comando CURL para actualizar parcialmente un estudiante por ID
- * @param {number} id - ID del estudiante a actualizar parcialmente
- * @param {Object} partialData - Datos parciales del estudiante a actualizar
+/**
+ * Actualizar un estudiante completo por ID
+ * @param {string} studentId - ID del estudiante a actualizar
+ * @param {Object} studentData - Datos completos del estudiante
  */
-function patchStudent(id, partialData) {
-    // Convertir los datos parciales del estudiante a JSON
-    const data = JSON.stringify(partialData);
-    // Construir la URL para actualizar parcialmente un estudiante por ID
-    const url = `${BASE_URL}/${id}`;
-    // Construir el comando CURL
-    const curlCommand = `curl -i -X PATCH ${url} -H "Content-Type: application/json" -d '${data}'`;
-    //Ejecutar el comando CURL en la terminal
-    exec(curlCommand, (error, stdout, stderr) => {
-        if (error) {
-            console.error(`Error al ejecutar el comando: ${error.message}`);
-            return;
-        }
-        if (stderr) {
-            console.error(`Error en la salida: ${stderr}`);
-            return;
-        }   
-});
+async function updateStudent(studentId, studentData) {
+    const data = JSON.stringify(studentData).replace(/"/g, '\\"');
+    const curlCommand = `curl -s -i -X PUT ${BASE_URL}/${studentId} -H "Content-Type: application/json" -d "${data}"`;
+    await runCurl(curlCommand);
 }
 
-/** DELETE Student
- * Crear un comando CURL para eliminar un estudiante por ID
- * @param {number} id - ID del estudiante a eliminar
+/**
+ * Actualizar parcialmente un estudiante por ID
+ * @param {string} studentId - ID del estudiante a actualizar
+ * @param {Object} partialData - Datos parciales a actualizar
  */
-function deleteStudent(id) {
-    // Construir la URL para eliminar un estudiante por ID
-    const url = `${BASE_URL}/${id}`;
-    // Construir el comando CURL
-    const curlCommand = `curl -i -X DELETE ${url}`;
-    //Ejecutar el comando CURL en la terminal
-    exec(curlCommand, (error, stdout, stderr) => {
-        if (error) {
-            console.error(`Error al ejecutar el comando: ${error.message}`);
-            return;
-        }
-        if (stderr) {
-            console.error(`Error en la salida: ${stderr}`);
-            return;
-        }   
-});
+async function patchStudent(studentId, partialData) {
+    const data = JSON.stringify(partialData).replace(/"/g, '\\"');
+    const curlCommand = `curl -s -i -X PATCH ${BASE_URL}/${studentId} -H "Content-Type: application/json" -d "${data}"`;
+    await runCurl(curlCommand);
+}
+
+/**
+ * Eliminar un estudiante por ID
+ * @param {string} studentId - ID del estudiante a eliminar
+ */
+async function deleteStudent(studentId) {
+    const curlCommand = `curl -s -i -X DELETE ${BASE_URL}/${studentId}`;
+    await runCurl(curlCommand);
 }
 
 // =======================================================
-// 💻 Ejecución del script CRUD con ejemplos
+// Ejecución secuencial del script CRUD con ID "c56a"
 // =======================================================
-console.log("=== INICIO DE EJECUCIÓN DEL SCRIPT CRUD ====\n");
+async function runCrudFlow() {
+    const studentId = "c56a";
 
-// 1️⃣ Crear estudiante
-console.log("=== CREAR ESTUDIANTE ===");
-createStudent({
-    name: "Maria Perez",
-    email: "maria@hmail.com",
-    enrollmentDate: "2023-10-01",
-    active: true,
-    level: "beginner",
-});
-console.log("\n");
+    console.log("=== INICIO DE EJECUCIÓN DEL SCRIPT CRUD ====\n");
 
-// 2️⃣ Leer todos los estudiantes
-console.log("=== LEER TODOS LOS ESTUDIANTES ===");
-readAllStudents();
-console.log("\n");
+    console.log("=== CREAR ESTUDIANTE ===");
+    await createStudent({
+        name: "Maria Perez",
+        email: "maria@hmail.com",
+        enrollmentDate: "2023-10-01",
+        active: true,
+        level: "beginner",
+    });
+    console.log("\n");
 
-// 3️⃣ Leer un estudiante por ID
-console.log("=== LEER ESTUDIANTE POR ID ===");
-readStudentById(4);
-console.log("\n");
+    console.log("=== LEER TODOS LOS ESTUDIANTES ===");
+    await readAllStudents();
+    console.log("\n");
 
-// 4️⃣ Actualizar un estudiante por ID
-console.log("=== ACTUALIZAR ESTUDIANTE COMPLETO ===");
-updateStudent(5, {
-    name: "Lola Benitez  Actualizado",
-    email: "lola@gmail.com",
-    enrollmentDate: "2025-10-01",
-    active: false,
-    level: "intermediate", 
-});
-console.log("\n");
+    console.log("=== LEER ESTUDIANTE POR ID ===");
+    await readStudentById(studentId);
+    console.log("\n");
 
-// 5️⃣ Actualizar parcialmente un estudiante por ID (PATCH)
-console.log("=== PATCH ESTUDIANTE ===");
-patchStudent(5, {
-    level: "advanced",
-    active: true,
-});
-console.log("\n");
+    console.log("=== ACTUALIZAR ESTUDIANTE COMPLETO ===");
+    await updateStudent(studentId, {
+        name: "Lola Benitez  Actualizado",
+        email: "lola@gmail.com",
+        enrollmentDate: "2025-10-01",
+        active: false,
+        level: "intermediate",
+    });
+    console.log("\n");
 
-// 6️⃣ Eliminar un estudiante por ID
-console.log("=== ELIMINAR ESTUDIANTE ===");
-deleteStudent(4);
-console.log("\n");
+    console.log("=== PATCH ESTUDIANTE ===");
+    await patchStudent(studentId, {
+        level: "advanced",
+        active: true,
+    });
+    console.log("\n");
 
-console.log("=== FIN DE EJECUCIÓN DEL SCRIPT CRUD ====");
+    console.log("=== ELIMINAR ESTUDIANTE ===");
+    await deleteStudent(studentId);
+    console.log("\n");
+
+    console.log("=== FIN DE EJECUCIÓN DEL SCRIPT CRUD ====");
+}
+
+// Ejecutar flujo CRUD
+runCrudFlow();

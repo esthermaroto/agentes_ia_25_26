@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "validate": " bash ./scripts/validate.sh"
+    "validate": "bash ./scripts/validate.sh"
   },
   "dependencies": {
     "dotenv": "17.2.2"
